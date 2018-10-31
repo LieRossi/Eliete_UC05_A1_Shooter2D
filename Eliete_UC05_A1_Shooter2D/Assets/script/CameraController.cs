@@ -4,24 +4,21 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    private GameObject player;
+    public Transform player;
+    private Vector3 novaposicaoCamera;
 
-  
+    // Use this for initialization
     void Start()
     {
-        player = GameObject.FindWithTag("Player");
+
     }
 
-    void LateUpdate()
+    // Update is called once per frame
+    void Update()
     {
-        if (player != null)
-        {
-            Vector3 newPosition = transform.position;
-            newPosition.x = player.transform.position.x;
+        novaposicaoCamera = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
+        transform.position = Vector3.Lerp(transform.position, novaposicaoCamera, 5 * Time.deltaTime);
 
-            transform.position = newPosition;
-        }
     }
-
 }
 

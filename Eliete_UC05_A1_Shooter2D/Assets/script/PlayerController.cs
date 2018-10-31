@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float Velocidade;
     //public float forcaPulo = 1000f;
     public bool viradoDireita = true;
+    //public bool atirando = true;
 
     // Use this for initialization
     void Start()
@@ -20,14 +21,23 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        //Flip();
+    void Update() {
+        atirar();
     }
 
+
+    void atirar() {
+
+    if (Input.GetKeyDown(KeyCode.Z)){
+     anim.SetTrigger("atirando");
+     }
+
+}
+
     //gerenciar as animacoes
-    private void FixedUpdate()
+    void FixedUpdate()
     {
+
         float translationY = 0;
         float translationX = Input.GetAxis("Horizontal") * Velocidade;
         transform.Translate(translationX, translationY, 0);
@@ -60,4 +70,14 @@ public class PlayerController : MonoBehaviour
         escala.x *= -1;
         transform.localScale = escala;
     }
-}
+
+   /* public void atirar(){
+
+        if (Input.GetButtonDown("Z"))
+        {
+            anim.SetTrigger("atirando");
+        }
+
+    }*/
+} 
+
