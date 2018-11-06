@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public Transform player;
+   /* public Transform player;
     private Vector3 novaposicaoCamera;
 
     // Use this for initialization
@@ -19,6 +19,6 @@ public class CameraController : MonoBehaviour
         novaposicaoCamera = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
         transform.position = Vector3.Lerp(transform.position, novaposicaoCamera, 5 * Time.deltaTime);
 
-    }
+    }*/
 }
 

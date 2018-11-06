@@ -23,8 +23,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update() {
         atirar();
+        pular();
     }
-
+    void pular() {
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            rb2d.AddForce(new Vector2(0, 500));
+            anim.SetTrigger("pulando");
+        }
+    }
 
     void atirar() {
 
@@ -71,13 +77,19 @@ public class PlayerController : MonoBehaviour
         transform.localScale = escala;
     }
 
-   /* public void atirar(){
 
-        if (Input.GetButtonDown("Z"))
+       // destroi ao colidir
+   /* void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.isTrigger)
         {
-            anim.SetTrigger("atirando");
+            Destroy(gameObject);
         }
 
-    }*/
-} 
+        if (other.CompareTag("PrefabEnemy")) ;
+        {
+            Destroy(gameObject);
+        }*/
+
+    }
 
