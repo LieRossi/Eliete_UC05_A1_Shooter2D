@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private Animator anim;
     private Rigidbody2D rb2d;
-
+    //public int Gun;
     public float Velocidade;
     //public float forcaPulo = 1000f;
     public bool viradoDireita = true;
