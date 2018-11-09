@@ -13,11 +13,11 @@ public class ShotController : MonoBehaviour
             = new Vector2(transform.localRotation.eulerAngles.z == 0 ? 20 : -20, 0);
         Destroy(gameObject, 2f);
     }
-    //destruido no momento da colisao
 
-   /* void OnTriggerEnter2D(Collider2D other)
+    //destruido no momento da colisao
+       /* void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("PrefabEnemy"));
+        if (other.CompareTag("PrefabEnemy"))
         {
             Destroy(gameObject);
         }

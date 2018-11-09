@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (other.CompareTag("PrefabEnemy")) ;
+        if (other.CompareTag("PrefabEnemy")) 
         {
             Destroy(gameObject);
         }*/

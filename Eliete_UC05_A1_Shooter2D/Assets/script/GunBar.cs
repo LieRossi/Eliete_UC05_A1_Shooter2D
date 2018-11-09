@@ -5,20 +5,19 @@ using UnityEngine.UI;
 
 public class GunBar : MonoBehaviour {
     public Sprite[] bar;
-    public Image gunBarUI;
-    private GameController IndexArma;
-   
-    
+    public Image GunBarUI;
+    private GameController Gun;
+  
 
 	// Use this for initialization
 	void Start () {
-        IndexArma = GameObject.Find("GameController").GetComponent<GameController>();
+        Gun = GameObject.Find("GameController").GetComponent<GameController>();
 		
 	}
 
     // Update is called once per frame
     void Update() {
-        gunBarUI.sprite = bar[IndexArma.Gun];
+        GunBarUI.sprite = bar[Gun.Gun];
 		
 	}
 }

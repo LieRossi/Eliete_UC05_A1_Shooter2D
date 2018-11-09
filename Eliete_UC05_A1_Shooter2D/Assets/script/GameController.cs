@@ -8,8 +8,10 @@ public class GameController : MonoBehaviour {
     public GameObject PrefabShot;
     public GameObject PrefabShot1;
     public Transform GunPoint;
-    private int IndexArma;
+    private int IndexArma = 1;
+    public Text ArmaUIText;
     public int Gun;
+
     
    float randy;
    Vector3 WhereToSpawn;
@@ -45,6 +47,7 @@ public class GameController : MonoBehaviour {
             if (IndexArma > 2)
             {
                 IndexArma = 1;
+                Gun = 1;
             }
         }
          
@@ -55,6 +58,7 @@ public class GameController : MonoBehaviour {
             {
                 Instantiate(PrefabShot, GunPoint.position, Quaternion.identity);
                 Gun = 1;
+                ArmaUIText.text = " 1ª" + " " + "Arma";
             }
             else
             {
@@ -62,6 +66,7 @@ public class GameController : MonoBehaviour {
                 {
                     Instantiate(PrefabShot1, GunPoint.position, Quaternion.identity);
                     Gun = 2;
+                    ArmaUIText.text = " 2ª" + " " + "Arma";
                 }
             }
         }

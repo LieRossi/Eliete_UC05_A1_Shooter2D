@@ -31,7 +31,7 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(gameObject);
         }*/
-             // destruicao do inimigo ao ser atingido pelo tiro
+        // destruicao do inimigo ao ser atingido pelo tiro
         if (other.CompareTag("PrefabShot")) ;
         {
             Destroy(gameObject);
