@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private Animator anim;
     private Rigidbody2D rb2d;
-    //public int Gun;
+    //public int GunPoint;
     public float Velocidade;
     //public float forcaPulo = 1000f;
     public bool viradoDireita = true;
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
         if (translationX > 0 && !viradoDireita)
         {
-            Flip(); ;
+            Flip(); 
 
         }
         else if (translationX < 0 && viradoDireita)
@@ -68,28 +68,37 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-
+        // inverte o player
     public void Flip()
     {
         viradoDireita = !viradoDireita;
         Vector3 escala = transform.localScale;
         escala.x *= -1;
         transform.localScale = escala;
-    }
-
-
-       // destroi ao colidir
-   /* void OnTriggerEnter2D(Collider2D other)
-    {
-        if (!other.isTrigger)
-        {
-            Destroy(gameObject);
-        }
-
-        if (other.CompareTag("PrefabEnemy")) 
-        {
-            Destroy(gameObject);
-        }*/
 
     }
+       // inverte o posicao do tiro
+    public void GunPoint()
+    { 
+        Vector3 GunPoint = transform.localScale;
+        GunPoint.x *= -1;
+        transform.localScale = GunPoint;
+    }
+
+    
+
+    // destroi ao colidir
+    /* void OnTriggerEnter2D(Collider2D other)
+     {
+         if (!other.isTrigger)
+         {
+             Destroy(gameObject);
+         }
+
+         if (other.CompareTag("PrefabEnemy")) 
+         {
+             Destroy(gameObject);
+         }*/
+
+}
 

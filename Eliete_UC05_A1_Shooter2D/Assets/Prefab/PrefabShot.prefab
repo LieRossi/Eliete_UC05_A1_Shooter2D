@@ -234,6 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbcec9d9ae4ced0458f4970f9eefdc56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  viradoDireita: 1
 --- !u!212 &212227530674147980
 SpriteRenderer:
   m_ObjectHideFlags: 1

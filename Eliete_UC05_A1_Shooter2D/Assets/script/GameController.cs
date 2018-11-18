@@ -8,12 +8,17 @@ public class GameController : MonoBehaviour {
     public GameObject PrefabShot;
     public GameObject PrefabShot1;
     public Transform GunPoint;
-    private int IndexArma = 1;
+    private int IndexArma;
     public Text ArmaUIText;
     public int Gun;
+    public int GunBar1;
+    public int GunBar2;
+    public bool viradoDireita = true;
+    private GameObject player;
 
-    
-   float randy;
+
+
+    float randy;
    Vector3 WhereToSpawn;
    public float spawnRate = 2f;
    float nextSpawn = 0.0f;
@@ -22,7 +27,7 @@ public class GameController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-              
+        player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
@@ -40,14 +45,14 @@ public class GameController : MonoBehaviour {
         }
 
         // escolha de arma
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             IndexArma++;
 
             if (IndexArma > 2)
             {
                 IndexArma = 1;
-                Gun = 1;
+                //Gun = GunBar1;
             }
         }
          
@@ -57,7 +62,7 @@ public class GameController : MonoBehaviour {
             if (IndexArma == 1)
             {
                 Instantiate(PrefabShot, GunPoint.position, Quaternion.identity);
-                Gun = 1;
+                Gun = GunBar1;
                 ArmaUIText.text = " 1ª" + " " + "Arma";
             }
             else
@@ -65,12 +70,32 @@ public class GameController : MonoBehaviour {
                 if (IndexArma == 2)
                 {
                     Instantiate(PrefabShot1, GunPoint.position, Quaternion.identity);
-                    Gun = 2;
+                    Gun = GunBar2;
                     ArmaUIText.text = " 2ª" + " " + "Arma";
                 }
             }
         }
 
+
+        // inverte a animacao do tiro
        
+        /*{ 
+            viradoDireita = !viradoDireita;
+            Vector3 escalaPrefabShot = transform.localScale;
+            escalaPrefabShot.x *= -1;
+            transform.localScale = escalaPrefabShot;
+
+            Vector3 escalaPrefabShot1 = transform.localScale;
+            escalaPrefabShot1.x *= -1;
+            transform.localScale = escalaPrefabShot1;
+        }*/
+
+
+
+
+
+
+
+
     }
 }
